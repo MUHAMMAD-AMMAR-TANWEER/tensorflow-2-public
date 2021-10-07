@@ -78,9 +78,9 @@
             // using ReLu activation functions where applicable. For this dataset only a few
             // hidden layers should be enough to get a high accuracy.  
             const model = tf.sequential();
-            model.add(tf.layers.dense({inputShape: [numOfFeatures],activation:"relu",units=16}));
-            model.add(tf.layers.dense({activation:"relu",units=8}));
-            model.add(tf.layers.dense({activation:"relu",units=4}));
+            model.add(tf.layers.dense({inputShape: [numOfFeatures] , activation:"relu" ,units:16 }));
+            model.add(tf.layers.dense({activation:"relu",units:8}));
+            model.add(tf.layers.dense({activation:"relu",units:4}));
             model.compile({loss: "BinaryCrossentropy", optimizer: tf.train.adam(0.06)});
 
             
@@ -90,7 +90,7 @@
             
             // Compile the model using the binaryCrossentropy loss, 
             // the rmsprop optimizer, and accuracy for your metrics. 
-            model.compile(// YOUR CODE HERE);
+            model.compile({loss: "BinaryCrossentropy", optimizer:tf.train.adam(0.06)});
             
             
             await model.fitDataset(convertedTrainingData, 
